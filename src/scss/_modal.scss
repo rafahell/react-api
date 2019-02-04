@@ -1,0 +1,85 @@
+
+.modal {
+  background-image: radial-gradient(circle at 20% 50%, rgba(1.18%, 2.35%, 4.31%, 0.98) 0%, rgba(18.82%, 26.67%, 30.20%, 0.88) 100%);
+}
+
+.modal-backdrop.show {
+  opacity: .90;
+}
+
+.modal-lg {
+  max-width: 760px;
+}
+
+.modal-content {
+  background-color: $bodyGrey;
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
+}
+
+.content-modal {
+  h1 {
+    font-weight: 700;
+    font-size: 1.55rem;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+  }
+  
+  .custom-badge {
+    margin-right: 0;
+    font-size: 17px;
+    color: $black;
+  }
+
+  .poster-image {
+    max-width: 81px;
+    width: 100%;
+  }
+}
+
+.modal-body {
+  .poster-image {
+    max-width: 191px;
+    display: block;
+    @media screen and (max-width: 767px) {
+      margin: 0 auto;
+    }
+  }
+  .companies-names { 
+    p{
+      line-height: 1;
+      text-align: center;
+    }
+    img {
+      margin: 0 auto;
+      display: block;
+      margin-bottom: 5px;
+      max-width: 50px;
+    }
+  }
+
+  .vote-wrapper {
+    position: relative;
+    width: 100%;
+    display: block;
+
+    .vote-average {
+      @media screen and (min-width: 767px), only screen and (min-width: 767px)  {
+        position: absolute;
+        right: 0px;
+      }
+    }
+  }
+  
+}
+
+.modal-footer {
+  border: none;
+  padding: 0 20px 20px;
+}

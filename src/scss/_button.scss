@@ -1,0 +1,16 @@
+.green-button {
+  transition: all 0.5s ease;
+  font-weight: 700;
+  color: $black;
+  text-transform: uppercase;
+  background-color: $green;
+  border-color: $green;
+  border-radius: 20px;
+
+  &:hover, &:active {
+    transition: all 0.5s ease;
+    background-color: $black !important;
+    border-color: $black;
+    color: $white;
+  }
+}

@@ -1,0 +1,74 @@
+.card-body {
+  background-image: radial-gradient(circle at 20% 50%, rgba(1.18%, 2.35%, 4.31%, 0.98) 0%, rgba(18.82%, 26.67%, 30.20%, 0.88) 100%);
+  color: $white;
+  height: 160px;
+
+  @media screen and (min-width: 320px) and (max-width: 767px), only screen and (max-width: 767px)  {
+    text-align: left;
+  }
+
+  img {
+    margin: 0px 15px 0px 0px;
+    border: 1px solid $white;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+    @media screen and (min-width: 320px) and (max-width: 767px), only screen and (max-width: 767px)  {
+      font-size: 1.1rem;
+    }
+  }
+
+  .card-text {
+    margin-bottom: 0;
+  }
+
+  .poster-image {
+    max-width: 75px;
+    width: 100%;
+    @media screen and (max-width: 767px) {
+      display:none;
+    } 
+  }
+}
+
+
+@keyframes fadeInUp {
+  from {
+      transform: translate3d(0,40px,0)
+  }
+
+  to {
+      transform: translate3d(0,0,0);
+      opacity: 1
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+      transform: translate3d(0,40px,0)
+  }
+
+  to {
+      transform: translate3d(0,0,0);
+      opacity: 1
+  }
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both
+}
+
+.animatedFadeInUp {
+  opacity: 0
+}
+
+.fadeInUp {
+  opacity: 0;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+}

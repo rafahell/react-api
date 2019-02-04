@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import  './_colors.scss';
+@import  './_button.scss';
+@import './_card.scss';
+@import './_modal.scss';
+
+body {
+  background-color: $bodyGrey;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+}
+
+h1 {
+  @media screen and (min-width: 320px) and (max-width: 767px), only screen and (max-width: 767px)  {
+    font-size: 1.75rem;
+    margin-left: 0;
+  }
+}
+
+.spacer {
+  background-color: transparent;
+  border: 0;
+  height: 1px;
+  margin-bottom: 0.5em;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+
+.movies-row {
+  margin-bottom: 10px;
+}
+
+.mt-20 {
+  margin-top: -20px;
+  @media screen and (min-width: 320px) and (max-width: 767px), only screen and (max-width: 767px)  {
+    margin-top: 50px;
+  } 
+}
+
+//Badge
+.custom-badge {
+  font-size: 20px;
+  border-radius: 20px;
+  margin-right: 20px;
+  padding: 5px 5px;
+  color: $white;
+  background-color: transparent;
+}
+
+
+//star
+.star {
+  position: relative;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: .9em;
+  margin-right: .9em;
+  margin-bottom: 0.85em;
+  border-right: .3em solid transparent;
+  border-bottom: .7em  solid $yellowStar;
+  border-left: .3em solid transparent;
+  font-size: 10px;
+  &:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: .6em;
+    left: -1em;
+    border-right: 1em solid transparent;
+    border-bottom: .7em  solid $yellowStar;
+    border-left: 1em solid transparent;
+    -webkit-transform: rotate(-35deg);
+    transform: rotate(-35deg);
+  }
+  &:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: .6em;
+    left: -1em;
+    border-right: 1em solid transparent;
+    border-bottom: .7em  solid $yellowStar;
+    border-left: 1em solid transparent;
+    -webkit-transform: rotate(-35deg);
+    transform: rotate(-35deg);
+    -webkit-transform: rotate(35deg);
+    transform: rotate(35deg);
+  }
+}
