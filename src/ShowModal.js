@@ -39,8 +39,6 @@ class ShowModal extends React.Component {
             show={lgShow}
             onHide={lgClose}
             aria-labelledby="Modal-modal-sizes-title-lg"
-
-            // style={{ backgroundRepeat: 'no-repeat',backgroundImage: `url(https://image.tmdb.org/t/p/w500${moviesDetails.backdrop_path})`}}
           >
             <Modal.Body>
 
