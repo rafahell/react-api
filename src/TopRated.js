@@ -17,9 +17,6 @@ class TopRated extends Component {
     const {isLoaded, movies} = this.props;
     let loading = <div className="loading"/>;
 
-    // if(!isLoaded) {
-    //   return <div className="loading"></div>
-    // } else {
       return (
 
         !isLoaded ? loading : <div className="top-rated">       
@@ -67,8 +64,6 @@ class TopRated extends Component {
         </div>
         
       );
-    // }
-
     
   }//render
 
