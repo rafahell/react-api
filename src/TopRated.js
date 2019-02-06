@@ -15,13 +15,14 @@ class TopRated extends Component {
   render() {
     let lgClose = () => this.setState({ lgShow: false });
     const {isLoaded, movies} = this.props;
+    let loading = <div className="loading"/>;
 
-
-    if(!isLoaded) {
-      return <div className="loading"></div>
-    } else {
+    // if(!isLoaded) {
+    //   return <div className="loading"></div>
+    // } else {
       return (
-        <div className="top-rated">       
+
+        !isLoaded ? loading : <div className="top-rated">       
 
             <hr className="spacer"/>
             <Container>
@@ -62,12 +63,11 @@ class TopRated extends Component {
             </Container>
         
           <ShowModal lgShow={ this.state.lgShow } 
-          lgClose={lgClose} movieId={this.state.movieId}
-           />  
+          lgClose={lgClose} movieId={this.state.movieId} loading={loading} />  
         </div>
         
       );
-    }
+    // }
 
     
   }//render

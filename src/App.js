@@ -10,8 +10,11 @@ class App extends Component {
       isLoaded: false,
     }
   }
-  
-  componentDidMount () {
+
+  getTopRatedMovies() {
+    // setTimeout(function() {
+      
+    // }, 5000);
     fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=4a203abe54a397a3160c4eb42e275f70')
     .then(res => res.json())
     .then(json => {
@@ -20,6 +23,10 @@ class App extends Component {
         movies: json.results,
       })
     });
+  }
+  
+  componentDidMount () {
+    this.getTopRatedMovies();
   }
 
   render() {
