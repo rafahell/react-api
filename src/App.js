@@ -7,7 +7,7 @@ class App extends Component {
     super(props);
     this.state = {
       movies: [],
-      isLoaded: false,
+      isLoaded: false 
     }
   }
 

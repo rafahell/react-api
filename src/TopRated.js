@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import ShowModal from './ShowModal';
 import { Button,Card,Container,Row,Col,Badge } from 'react-bootstrap';
+import ShowModal from './ShowModal';
+import Loader from './Loader';
 
 class TopRated extends Component {
     state = {
         lgShow: false,
         movieId: "",
     };
-
+    
     handleClick(m) {
         this.setState({ lgShow: true, movieId: m.id })
     }
@@ -15,11 +16,10 @@ class TopRated extends Component {
   render() {
     let lgClose = () => this.setState({ lgShow: false });
     const {isLoaded, movies} = this.props;
-    let loading = <div className="loading"/>;
-
+    
       return (
 
-        !isLoaded ? loading : <div className="top-rated">       
+        !isLoaded ? <Loader /> : <div className="top-rated">       
 
             <hr className="spacer"/>
             <Container>
@@ -60,7 +60,7 @@ class TopRated extends Component {
             </Container>
         
           <ShowModal lgShow={ this.state.lgShow } 
-          lgClose={lgClose} movieId={this.state.movieId} loading={loading} />  
+          lgClose={lgClose} movieId={this.state.movieId} />  
         </div>
         
       );
