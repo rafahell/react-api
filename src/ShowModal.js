@@ -17,16 +17,14 @@ class ShowModal extends React.Component {
       fetch(url)
         .then(res => res.json())
           .then(json => {
-            if(status === true){
+            status === true ?
               this.setState({
                 isLoaded: true,
                 moviesDetails: json,
                 moviesCompanies: json.production_companies,
                 moviesGenres: json.genres,
-              })
-            }else {    
-              this.setState({isLoaded: false})
-            }
+              }) 
+            : this.setState({isLoaded: false}) 
           })
     }
 
@@ -39,28 +37,22 @@ class ShowModal extends React.Component {
       const {lgClose, lgShow } = this.props
       const {moviesCompanies, moviesDetails, moviesGenres, isLoaded} = this.state
       const ShowlMovieDetails = <Modal size="lg" show={lgShow} onHide={lgClose} aria-labelledby="Modal-modal-sizes-title-lg">
-      
-        <Modal.Body>
-          <ModalContentMovies moviesCompanies = {moviesCompanies} moviesDetails = {moviesDetails} moviesGenres = {moviesGenres} lgShow={lgShow} lgClose={lgClose}/>
-
-        </Modal.Body>
-        <Modal.Footer onClick={lgClose}>
-            <Button variant="secondary green-button">Back</Button>
-        </Modal.Footer>
+          <Modal.Body>
+            <ModalContentMovies moviesCompanies = {moviesCompanies} moviesDetails = {moviesDetails} moviesGenres = {moviesGenres} lgShow={lgShow} lgClose={lgClose}/>
+          </Modal.Body>
+          <Modal.Footer onClick={lgClose}>
+              <Button variant="secondary green-button">Back</Button>
+          </Modal.Footer>
       </Modal>;
 
       const loadingModal = <Modal size="sm" show={lgShow} onHide={lgClose} aria-labelledby="sm">
-      <Modal.Body >
-        <Loader />
-      </Modal.Body>
+        <Modal.Body >
+          <Loader />
+        </Modal.Body>
       </Modal>;
 
-      if (!isLoaded) {
-        return loadingModal;
-      }
-
       return (
-        ShowlMovieDetails
+        !isLoaded ? loadingModal : ShowlMovieDetails
       );
     
     }

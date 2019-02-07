@@ -1,6 +1,6 @@
+import './scss/App.scss';
 import React, { Component } from 'react';
 import TopRated from './TopRated';
-import './scss/App.scss';
 
 class App extends Component {
   constructor(props) {
