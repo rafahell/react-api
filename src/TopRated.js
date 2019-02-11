@@ -4,13 +4,17 @@ import ShowModal from './ShowModal';
 import Loader from './Loader';
 
 class TopRated extends Component {
-    state = {
-        lgShow: false,
-        movieId: "",
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            lgShow: false,
+            movieId: "",
+        };
+        this.handleClick = this.handleClick.bind(this);
+    }
     
-    handleClick(m) {
-        this.setState({ lgShow: true, movieId: m.id })
+    handleClick(e) {
+        this.setState({ lgShow: true, movieId: e.id })
     }
     
   render() {
